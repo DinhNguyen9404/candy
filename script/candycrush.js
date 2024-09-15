@@ -14,7 +14,7 @@ window.onload = function(){
     startGame();
 
     //1/10th of a second
-    window.setInterval(function(){
+    setInterval(function(){
         crushCandy();
         slideCandy();
         generateCandy();
@@ -152,7 +152,6 @@ function crushFour(){
                             curScore += 300;
                         }
                         candy.src = "/Images/CandyCrush/blank.png";
-                        checkScore();
                     })
                 }
             }
@@ -187,7 +186,6 @@ function crushFour(){
                             curScore += 300;
                         }
                         candy.src = "/Images/CandyCrush/blank.png";
-                        checkScore();
                     })
                 }
             }
@@ -276,7 +274,6 @@ function crushThree(){
                             curScore += 300;
                         }
                         candy.src = "/Images/CandyCrush/blank.png";
-                        checkScore();
                     })
                 }
             }
@@ -310,7 +307,6 @@ function crushThree(){
                             curScore += 300;
                         }
                         candy.src = "/Images/CandyCrush/blank.png";
-                        checkScore();
                     })
                 }
             }
