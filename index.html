@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/candycrush.css">
+    <title>Chapter 9: Candy Crush</title>
+</head>
+<body>
+    <div class="intro">
+        <h1>Chapter 9: Candy Crush</h1>
+        <h2>Đạt số điểm yêu cầu để mở khóa màn chơi kế tiếp. Bổ sung cơ chế mới qua 2 nút đổi điểm và thay đổi màn chơi</h2>
+        <h2>Đổi điểm: Bỏ 5 lượt đi để nhận 5000 điểm & Thay đổi: Bỏ 10000 điểm để làm mới màn chơi</h2>
+        <h2>Kẹo đặc biệt không có chức năng nhưng điểm nhận được sẽ cao hơn (do tui không code nổi)</h2>
+        <h2>Nếu như không còn lượt đi hoặc không đủ điểm để thay đổi, buộc phải bắt đầu lại</h2>
+    </div>
+
+    <div class="game">
+        <div class="menu">
+            <button class="exchange">Đổi điểm</button>
+            <button class="shuffle">Thay đổi</button>
+            <button class="restart">Bắt đầu lại</button>
+            <div class="turns">Lượt còn lại: <span id="turns">50</span></div>
+            <div class="score">Điểm: <span id="score">0/100000</span></div>
+        </div>
+
+        <div class="board">
+            
+        </div>
+    </div>
+
+
+    <div class="continue-container">
+        <div class="continue">
+            <div>
+                <h2>Code màn này nhức đầu thiệt chứ</h2>
+                <h3>Coi chừng quên cái này: finalchallenge</h3>
+                <button>
+                    <a href="menu.html">Trở về menu</a>
+                </button>
+                <button>
+                    <a href="2048.html">The Final Challenge</a>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="failed-container">
+        <div class="failed">
+            <div>
+                <h2>Đâu có dễ ăn vậy</h2>
+                <h3>Again?</h3>
+                <button class="restart">
+                    Thử lại
+                </button>
+                <button>
+                    <a href="index.html">Trở về menu</a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/candycrush.js"></script>
+</body>
+</html>

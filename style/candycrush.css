@@ -1,0 +1,202 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../Images/ScreenShot00006.png);
+    background-attachment: fixed;
+    position: relative;
+    height: 100vh;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.intro{
+    width: 70%;
+    padding: 10px;
+    padding-left: 30px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, rgb(119, 118, 154), 60%, rgb(46, 188, 176));
+    margin-bottom: 50px;
+    margin-left: 20px;
+    color: rgb(68, 11, 86);
+}
+
+.intro h1{
+    font-style: italic;
+    color: rgb(55, 224, 36);
+    font-size: 2.4rem;
+}
+
+.intro h2{
+    font-size: 1.3rem;
+}
+
+/* Game */
+.game{
+    margin: auto;
+    width: 55%;
+    height: 67%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    gap: 40px;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+}
+
+.menu{
+    width: 90%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 40px;
+    background-color: rgb(83, 168, 168);
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.menu button{
+    padding: 10px;
+    width: 110px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.menu .turns{
+    padding: 10px;
+    text-align: center;
+    background-color: orange;
+    color: white;
+    border-radius: 10px;
+}
+
+.menu .score{
+    padding: 10px;
+    width: 200px;
+    background-color: green;
+    color: gold;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.exchange{
+    color: red;
+    background-color: yellow;
+    transition: 0.2s ease;
+}
+.exchange:hover{
+    color: blue;
+    background-color: white;
+}
+
+.shuffle{
+    color: white;
+    background-color: rgba(255, 0, 0, 0.413);
+    transition: 0.2s ease;
+}
+.shuffle:hover{
+    color: green;
+    background-color: palegoldenrod;
+}
+
+.restart{
+    color: rgb(13, 76, 212);
+    background-color: rgb(212, 222, 211);
+    transition: 0.2s ease-in-out;
+}
+.restart:hover{
+    color: black;
+    background-color: white;
+}
+
+.board{
+    width: 500px;
+    height: 500px;
+    border: 5px solid slategray;
+    background-color: lightblue;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.board img{
+    width: 50px;
+    height: 50px;
+}
+
+
+
+/* Continue */
+.continue-container, .failed-container{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+}
+
+.continue, .failed{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.continue div, .failed div{
+    position: absolute;
+    width: 50%;
+    height: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(12, 163, 143);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    color: purple;
+}
+
+.continue h3{
+    color: rgb(8, 70, 112);
+}
+
+.failed div{
+    background-color: rgb(208, 46, 46);
+}
+
+.continue div button, .failed div button{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.continue div button:hover{
+    color: white;
+    background: green;
+}
+
+.restart:hover{
+    color: white;
+    background-color: red;
+}
