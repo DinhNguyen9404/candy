@@ -19,7 +19,7 @@ window.onload = function(){
         slideCandy();
         generateCandy();
         checkScore();
-    }, 1000);
+    }, 100);
 }
 
 function randomCandy(){
@@ -132,28 +132,26 @@ function crushFour(){
             checkrow[1] = board[r][c+1];
             checkrow[2] = board[r][c+2];
             checkrow[3] = board[r][c+3];
-            for(let i = 0; i < candies.length; i++){
-                let color = candies[i];
-                let rc = 0;
-                checkrow.forEach(candy =>{
-                    if(candy.src.includes(color)){
-                        rc++;
-                    }
-                });
-                if(rc == 4){
-                    checkrow.forEach(candy =>{
-                        if(candy.src.includes("Striped")){
-                            curScore+= 500;
-                        }
-                        else if(candy.src.includes("Wrapped")){
-                            curScore+= 700;
-                        }
-                        else{
-                            curScore += 300;
-                        }
-                        candy.src = "/Images/CandyCrush/blank.png";
-                    })
+            let color = checkrow[0].src.substring(0, 42);
+            let rc = 0;
+            checkrow.forEach(candy =>{
+                if(candy.src.includes(color)){
+                    rc++;
                 }
+            });
+            if(rc == 4){
+                checkrow.forEach(candy =>{
+                    if(candy.src.includes("Striped")){
+                        curScore+= 500;
+                    }
+                    else if(candy.src.includes("Wrapped")){
+                        curScore+= 700;
+                    }
+                    else{
+                        curScore += 300;
+                    }
+                    candy.src = "/Images/CandyCrush/blank.png";
+                })
             }
         }
     }
@@ -166,29 +164,28 @@ function crushFour(){
             checkcol[1] = board[r+1][c];
             checkcol[2] = board[r+2][c];
             checkcol[3] = board[r+3][c];
-            for(let i = 0; i < candies.length; i++){
-                let color = candies[i];
-                let cc = 0;
-                checkcol.forEach(candy =>{
-                    if(candy.src.includes(color)){
-                        cc++;
-                    }
-                });
-                if(cc == 4){
-                    checkcol.forEach(candy =>{
-                        if(candy.src.includes("Striped")){
-                            curScore+= 500;
-                        }
-                        else if(candy.src.includes("Wrapped")){
-                            curScore+= 700;
-                        }
-                        else{
-                            curScore += 300;
-                        }
-                        candy.src = "/Images/CandyCrush/blank.png";
-                    })
+            let color = checkcol[0].src.substring(0, 42);
+            let cc = 0;
+            checkcol.forEach(candy =>{
+                if(candy.src.includes(color)){
+                    cc++;
                 }
+            });
+            if(cc == 4){
+                checkcol.forEach(candy =>{
+                    if(candy.src.includes("Striped")){
+                        curScore+= 500;
+                    }
+                    else if(candy.src.includes("Wrapped")){
+                        curScore+= 700;
+                    }
+                    else{
+                        curScore += 300;
+                    }
+                    candy.src = "/Images/CandyCrush/blank.png";
+                })
             }
+            
         }
     }
 }
@@ -201,18 +198,17 @@ function checkValid4(){
             checkrow[1] = board[r][c+1];
             checkrow[2] = board[r][c+2];
             checkrow[3] = board[r][c+3];
-            for(let i = 0; i < candies.length; i++){
-                let color = candies[i];
-                let rc = 0;
-                checkrow.forEach(candy =>{
-                    if(candy.src.includes(color)){
-                        rc++;
-                    }
-                });
-                if(rc == 4){
-                    return true;
+            let color = checkrow[0].src.substring(0, 42);
+            let rc = 0;
+            checkrow.forEach(candy =>{
+                if(candy.src.includes(color)){
+                    rc++;
                 }
+            });
+            if(rc == 4){
+                return true;
             }
+        
         }
     }
 
@@ -224,18 +220,18 @@ function checkValid4(){
             checkcol[1] = board[r+1][c];
             checkcol[2] = board[r+2][c];
             checkcol[3] = board[r+3][c];
-            for(let i = 0; i < candies.length; i++){
-                let color = candies[i];
-                let cc = 0;
-                checkcol.forEach(candy =>{
-                    if(candy.src.includes(color)){
-                        cc++;
-                    }
-                });
-                if(cc == 4){
-                    return true;
+
+            let color = checkcol[0].src.substring(0, 42);
+            let cc = 0;
+            checkcol.forEach(candy =>{
+                if(candy.src.includes(color)){
+                    cc++;
                 }
+            });
+            if(cc == 4){
+                return true;
             }
+            
         }
     }
 
@@ -254,8 +250,9 @@ function crushThree(){
             checkrow[0] = board[r][c];
             checkrow[1] = board[r][c+1];
             checkrow[2] = board[r][c+2];
-            for(let i = 0; i < candies.length; i++){
-                let color = candies[i];
+
+                let color = checkrow[0].src.substring(0, 42);
+                console.log(color);
                 let rc = 0;
                 checkrow.forEach(candy =>{
                     if(candy.src.includes(color)){
@@ -276,7 +273,7 @@ function crushThree(){
                         candy.src = "/Images/CandyCrush/blank.png";
                     })
                 }
-            }
+            
         }
     }
 
@@ -287,28 +284,27 @@ function crushThree(){
             checkcol[0] = board[r][c];
             checkcol[1] = board[r+1][c];
             checkcol[2] = board[r+2][c];
-            for(let i = 0; i < candies.length; i++){
-                let color = candies[i];
-                let cc = 0;
-                checkcol.forEach(candy =>{
-                    if(candy.src.includes(color)){
-                        cc++;
-                    }
-                });
-                if(cc == 3){
-                    checkcol.forEach(candy =>{
-                        if(candy.src.includes("Striped")){
-                            curScore+= 500;
-                        }
-                        else if(candy.src.includes("Wrapped")){
-                            curScore+= 700;
-                        }
-                        else{
-                            curScore += 300;
-                        }
-                        candy.src = "/Images/CandyCrush/blank.png";
-                    })
+
+            let color = checkcol[0].src.substring(0, 42);
+            let cc = 0;
+            checkcol.forEach(candy =>{
+                if(candy.src.includes(color)){
+                    cc++;
                 }
+            });
+            if(cc == 3){
+                checkcol.forEach(candy =>{
+                    if(candy.src.includes("Striped")){
+                        curScore+= 500;
+                    }
+                    else if(candy.src.includes("Wrapped")){
+                        curScore+= 700;
+                    }
+                    else{
+                        curScore += 300;
+                    }
+                    candy.src = "/Images/CandyCrush/blank.png";
+                })
             }
         }
     }
@@ -324,17 +320,15 @@ function checkValid3(){
             checkrow[0] = board[r][c];
             checkrow[1] = board[r][c+1];
             checkrow[2] = board[r][c+2];
-            for(let i = 0; i < candies.length; i++){
-                let color = candies[i];
-                let rc = 0;
-                checkrow.forEach(candy =>{
-                    if(candy.src.includes(color)){
-                        rc++;
-                    }
-                });
-                if(rc == 3){
-                    return true;
+            let color = checkrow[0].src.substring(0, 42);
+            let rc = 0;
+            checkrow.forEach(candy =>{
+                if(candy.src.includes(color)){
+                    rc++;
                 }
+            });
+            if(rc == 3){
+                return true;
             }
         }
     }
@@ -346,18 +340,17 @@ function checkValid3(){
             checkcol[0] = board[r][c];
             checkcol[1] = board[r+1][c];
             checkcol[2] = board[r+2][c];
-            for(let i = 0; i < candies.length; i++){
-                let color = candies[i];
-                let cc = 0;
-                checkcol.forEach(candy =>{
-                    if(candy.src.includes(color)){
-                        cc++;
-                    }
-                });
-                if(cc == 3){
-                    return true;
+            let color = checkcol[0].src.substring(0, 42);
+            let cc = 0;
+            checkcol.forEach(candy =>{
+                if(candy.src.includes(color)){
+                    cc++;
                 }
+            });
+            if(cc == 3){
+                return true;
             }
+            
         }
     }
     return false;
@@ -466,5 +459,6 @@ restarts.forEach(restart =>{
 })
 
 
-
+let string = '../Images/CandyCrush/Green';
+console.log(string.substring(0, 22));
 
