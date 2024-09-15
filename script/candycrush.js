@@ -32,7 +32,7 @@ function startGame(){
         for(let c = 0; c < cols; c++){
             let tile = document.createElement("img");
             tile.id = r.toString() + "-" + c.toString(); //Danh dau thu tu bang id
-            tile.src = "./Images/CandyCrush/" + randomCandy() + ".png";  //Gan link hinh anh
+            tile.src = "../Images/CandyCrush/" + randomCandy() + ".png";  //Gan link hinh anh
 
             //Drag functionality
             tile.addEventListener("dragstart", dragStart);  //Click on a candy, initialize drag process
@@ -150,7 +150,7 @@ function crushFour(){
                     else{
                         curScore += 300;
                     }
-                    candy.src = "/Images/CandyCrush/blank.png";
+                    candy.src = "../Images/CandyCrush/blank.png";
                 })
             }
         }
@@ -182,7 +182,7 @@ function crushFour(){
                     else{
                         curScore += 300;
                     }
-                    candy.src = "/Images/CandyCrush/blank.png";
+                    candy.src = "../Images/CandyCrush/blank.png";
                 })
             }
             
@@ -270,7 +270,7 @@ function crushThree(){
                         else{
                             curScore += 300;
                         }
-                        candy.src = "/Images/CandyCrush/blank.png";
+                        candy.src = "../Images/CandyCrush/blank.png";
                     })
                 }
             
@@ -303,7 +303,7 @@ function crushThree(){
                     else{
                         curScore += 300;
                     }
-                    candy.src = "/Images/CandyCrush/blank.png";
+                    candy.src = "../Images/CandyCrush/blank.png";
                 })
             }
         }
@@ -367,7 +367,7 @@ function slideCandy(){
         }
 
         for(let r = index; r >= 0; r--){
-            board[r][c].src = "Images/CandyCrush/blank.png";
+            board[r][c].src = "../Images/CandyCrush/blank.png";
         }
     }
 }
@@ -377,20 +377,18 @@ function generateCandy(){
         if(board[0][c].src.includes("blank")){
             let rand = Math.random();
             let randColor = candies[Math.floor(Math.random()* candies.length)]; 
-            board[0][c].src = "../Images/CandyCrush/" + randomCandy() + ".png";
-
-            // if(rand > 0.5){
-            //     board[0][c].src = "/Images/CandyCrush/" + randomCandy() + ".png";
-            // }
-            // else if(rand <= 0.5 && rand > 0.3){  
-            //     board[0][c].src = `Images/CandyCrush/${randColor}-Striped-Vertical.png`; 
-            // }
-            // else if(rand <= 0.3 && rand > 0.1){
-            //     board[0][c].src = `Images/CandyCrush/${randColor}-Striped-Horizontal.png`; 
-            // }
-            // else if(rand <= 0.1 && rand >= 0){
-            //     board[0][c].src = `Images/CandyCrush/${randColor}-Wrapped.png`;
-            // }
+            if(rand > 0.5){
+                board[0][c].src = "../Images/CandyCrush/" + randomCandy() + ".png";
+            }
+            else if(rand <= 0.5 && rand > 0.3){  
+                board[0][c].src = `../Images/CandyCrush/${randColor}-Striped-Vertical.png`; 
+            }
+            else if(rand <= 0.3 && rand > 0.1){
+                board[0][c].src = `../Images/CandyCrush/${randColor}-Striped-Horizontal.png`; 
+            }
+            else if(rand <= 0.1 && rand >= 0){
+                board[0][c].src = `../Images/CandyCrush/${randColor}-Wrapped.png`;
+            }
             
         }
     }
@@ -443,7 +441,7 @@ shuffle.addEventListener("click", ()=>{
 function reset(){
     for(let i = 0; i < rows; i++){
         for(let j =0; j <cols; j++){
-            board[i][j].src = 'Images/CandyCrush/blank.png';
+            board[i][j].src = '../Images/CandyCrush/blank.png';
         }
     }
 }
@@ -460,7 +458,4 @@ restarts.forEach(restart =>{
     })
 })
 
-
-let string = '../Images/CandyCrush/Green';
-console.log(string.substring(0, 22));
 
