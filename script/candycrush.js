@@ -377,18 +377,20 @@ function generateCandy(){
         if(board[0][c].src.includes("blank")){
             let rand = Math.random();
             let randColor = candies[Math.floor(Math.random()* candies.length)]; 
-            if(rand > 0.5){
-                board[0][c].src = "/Images/CandyCrush/" + randomCandy() + ".png";
-            }
-            else if(rand <= 0.5 && rand > 0.3){  
-                board[0][c].src = `Images/CandyCrush/${randColor}-Striped-Vertical.png`; 
-            }
-            else if(rand <= 0.3 && rand > 0.1){
-                board[0][c].src = `Images/CandyCrush/${randColor}-Striped-Horizontal.png`; 
-            }
-            else if(rand <= 0.1 && rand >= 0){
-                board[0][c].src = `Images/CandyCrush/${randColor}-Wrapped.png`;
-            }
+            board[0][c].src = "/Images/CandyCrush/" + randomCandy() + ".png";
+
+            // if(rand > 0.5){
+            //     board[0][c].src = "/Images/CandyCrush/" + randomCandy() + ".png";
+            // }
+            // else if(rand <= 0.5 && rand > 0.3){  
+            //     board[0][c].src = `Images/CandyCrush/${randColor}-Striped-Vertical.png`; 
+            // }
+            // else if(rand <= 0.3 && rand > 0.1){
+            //     board[0][c].src = `Images/CandyCrush/${randColor}-Striped-Horizontal.png`; 
+            // }
+            // else if(rand <= 0.1 && rand >= 0){
+            //     board[0][c].src = `Images/CandyCrush/${randColor}-Wrapped.png`;
+            // }
             
         }
     }
