@@ -19,7 +19,7 @@ window.onload = function(){
         slideCandy();
         generateCandy();
         checkScore();
-    }, 100);
+    }, 1000);
 }
 
 function randomCandy(){
