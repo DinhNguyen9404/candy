@@ -377,7 +377,7 @@ function generateCandy(){
         if(board[0][c].src.includes("blank")){
             let rand = Math.random();
             let randColor = candies[Math.floor(Math.random()* candies.length)]; 
-            board[0][c].src = "/Images/CandyCrush/" + randomCandy() + ".png";
+            board[0][c].src = "../Images/CandyCrush/" + randomCandy() + ".png";
 
             // if(rand > 0.5){
             //     board[0][c].src = "/Images/CandyCrush/" + randomCandy() + ".png";
